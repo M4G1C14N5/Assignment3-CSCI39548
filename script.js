@@ -152,5 +152,10 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    // get cells
+    let cells = document.querySelectorAll("td");
+    cells.forEach(cell => {
+        cell.style.backgroundColor = "";
+    });
+
 }
