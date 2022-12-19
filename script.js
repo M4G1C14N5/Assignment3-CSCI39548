@@ -57,12 +57,31 @@ function addR() {
         // increment the number of rows
         numRows++;
     }
-    
+
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    // create a table
+    let table = document.getElementById("grid");
+    // if it's empty, create a row and add it to the table
+    if (numCols === 0) {
+        let row = table.insertRow(numRows);
+        // create a cell and add it to the row
+        let cell = row.insertCell(numCols);
+        // increment the number of rows and columns
+        numRows++;
+        numCols++;
+    } else {
+        // if there are columns, add a column to the table
+        // for each row, create a cell and add it to the row
+        for (let i = 0; i < numRows; i++) {
+            let row = table.rows[i];
+            let cell = row.insertCell(numCols);
+        }
+        // increment the number of columns
+        numCols++;
+    }
 }
 
 // Remove a row
