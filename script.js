@@ -119,11 +119,23 @@ function removeC() {
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
     console.log(colorSelected);
+
 }
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    // get element by grid id
+    let table = document.getElementById("grid");
+    // use querySelectorAll to get all cells
+    let cells = table.querySelectorAll("td");
+    // for each cell, if it's empty, set the background color to the selected color
+    cells.forEach(cell => {
+        if (cell.style.backgroundColor === "") {
+            cell.style.backgroundColor = colorSelected;
+        }
+    });
+
+
 }
 
 // Fill all cells
