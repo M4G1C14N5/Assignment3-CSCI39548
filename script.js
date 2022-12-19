@@ -100,7 +100,19 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    // if there are no columns, do nothing
+    if (numCols === 0) {
+        return;
+    }
+    // if there are columns, remove the last column
+    let table = document.getElementById("grid");
+    for (let i = 0; i < numRows; i++) {
+        let row = table.rows[i];
+        row.deleteCell(numCols-1);
+    }
+    // decrement the number of columns
+    numCols--;
+    
 }
 
 // Set global variable for selected color
