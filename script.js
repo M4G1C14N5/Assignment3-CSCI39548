@@ -86,7 +86,16 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+        // if there are no rows, do nothing
+        if (numRows === 0) {
+            return;
+        } else {
+            // if there are rows, remove the last row
+            let table = document.getElementById("grid");
+            table.deleteRow(numRows-1);
+            // decrement the number of rows
+            numRows--;
+        }
 }
 
 // Remove a column
