@@ -140,7 +140,14 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    // get element by grid id
+    let table = document.getElementById("grid");
+    // use querySelectorAll to get all cells
+    let cells = table.querySelectorAll("td");
+    // for each cell, set the background color to the selected color
+    cells.forEach(cell => {
+        cell.style.backgroundColor = colorSelected;
+    });
 }
 
 // Clear all cells
